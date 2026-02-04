@@ -1,0 +1,80 @@
+<?php
+session_start();
+
+include("conn.php");
+
+if (!isset($_SESSION['name'])) {
+    header("location: index.html");
+	
+	$query=" select*from user_tbl";
+	$result = mysqli_query($conn,$query);
+	$data = (mysqli_num_rows($result));
+	$row = mysqli_fetch_array($result);
+}
+?>
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link href="css/fonts.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   </head>
+	<body class="Adminbox_main">
+	    <div class="Adminbox_main">	
+			<div class="blog_taital">ADMIN PANAL</div>
+			<h3>When looking at its layout.The point of using Lorem ipsum is that it has a more-or-less normal distribution of letters,as opposed to</h3>
+			<section class="listings">
+				<div class="container">
+					
+					<div class="blog_section_2">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="blog_img"><img src="images/21.jpg"></div>
+								<div class="btn_main">
+								</div>
+								<div class="blog_box">
+								<h3 class="blog_text">USER</h3>
+									<a href="sign-up.php"><button class="btn btn-danger btn-s-r">Add</button></a>
+								</div>
+								<div class="read_bt"><a href="user-list.php">User list</a></div>	
+							</div>
+							<div class="col-md-4">
+								<div class="blog_img"><img src="images/22.jpg"></div>
+								<div class="btn_main">
+								</div>
+								<div class="blog_box">
+									<h3 class="blog_text">INDUSTRY</h3>
+									<a href="#"><button class="btn btn-danger btn-s-r">Add</button></a>
+								</div>
+								<div class="read_bt"><a href="#">Industry list</a></div>	
+							</div>
+							<div class="col-md-4">
+								<div class="blog_img"><img src="images/23.jpg"></div>
+								<div class="btn_main">
+								</div>
+								<div class="blog_box">
+									<h3 class="blog_text">ABOUT-US</h3>
+									<a href="#"><button class="btn btn-danger btn-s-r">Add</button></a>
+								</div>
+								<div class="read_bt"><a href="#">about list</a></div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
